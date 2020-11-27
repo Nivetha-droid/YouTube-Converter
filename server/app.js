@@ -6,8 +6,11 @@ const PORT = 4000;
 
 app.use(cors());
 
-app.listen(PORT, () => {
-    console.log(`Server Works !!! At port ${PORT}`);
+app.use(express.static("public"));
+
+// https://expressjs.com/en/starter/basic-routing.html
+app.get("/", (request, response) => {
+    response.sendFile(__dirname + "/client/index.html");
 });
 
 app.get('/downloadmp3', async (req, res, next) => {
@@ -59,3 +62,9 @@ app.get('/downloadmp4', async (req, res, next) => {
         console.error(err);
     }
 });
+
+app.listen(PORT, () => {
+    console.log(`Server Works !!! At port ${PORT}`);
+});
+
+/*  https://youtu.be/zgJOi3hJYq0   */
