@@ -6,7 +6,11 @@ const PORT = 4000;
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
+
+app.get("/", (request, response) => {
+    response.sendFile(__dirname + "/public/index.html");
+});
 
 app.get('/downloadmp3', async (req, res, next) => {
     try {

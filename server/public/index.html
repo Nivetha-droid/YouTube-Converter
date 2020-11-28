@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-    <link rel='stylesheet' href='./style.css' />
-    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Converter</title>
 </head>
 
-<body>
-    <h1 class='heading'>Paste YouTube URL</h1>
-    <input class='URL-input' placeholder='https://www.youtube.com/watch?v=MtN1YnoL46Q' />
-    <select class='opt'>
-        <option value='mp3'>mp3</option>
-        <option value='mp4'>mp4</option>
-    </select>
 
-    <button class='convert-button' id='btn' onclick="myFunction()">Convert</button>
+<body>
+    <div class="container">
+        <h1 class="display-4 text-center my-3">Youtube MP3/MP4 Downloader</h1>
+        <div class="input-group">
+            <input type="text" class="form-control URL-input"
+                style="border-top-left-radius: 25px;border-bottom-left-radius: 25px;" placeholder="Paste youtube URL ">
+            <div class="input-group-append">
+                <select name="type" id="typeId" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;"
+                    class="form-control costum-select opt">
+                    <option value="mp4" class="options" selected>MP4</option>
+                    <option value="mp3" class="options">MP3</option>
+                </select>
+            </div>
+        </div><br>
+        <div class="text-center"><button class="btn btn-success btn-block w-50 m-auto"
+                style="font-size: 20px !important; font-weight: 500 !important; border-radius: 25px;"
+                onclick="myFunction()">Submit</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script src='./script.js'></script>
 </body>
 
