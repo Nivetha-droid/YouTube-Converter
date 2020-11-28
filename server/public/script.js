@@ -1,9 +1,7 @@
-let Btn = document.getElementById('btn');
 let URLinput = document.querySelector('.URL-input');
 let select = document.querySelector('.opt');
-let serverURL = 'http://localhost:4000';
 
-Btn.addEventListener('click', () => {
+function myFunction() {
     if (!URLinput.value) {
         alert('Enter YouTube URL');
     } else {
@@ -13,13 +11,13 @@ Btn.addEventListener('click', () => {
             downloadMp4(URLinput.value);
         }
     }
-});
+};
 
-async function downloadMp3(query) {
-    const res = await fetch(`${serverURL}/downloadmp3?url=${query}`);
+async function downloadMp3(url) {
+    const res = await fetch(`${window.location.href}getvideo?url=${url}`);
     if (res.status == 200) {
         var a = document.createElement('a');
-        a.href = `${serverURL}/downloadmp3?url=${query}`;
+        a.href = `${window.location.href}getvideo?url=${url}`;
         a.setAttribute('download', '');
         a.click();
     } else if (res.status == 400) {
@@ -27,11 +25,11 @@ async function downloadMp3(query) {
     }
 }
 
-async function downloadMp4(query) {
-    const res = await fetch(`${serverURL}/downloadmp4?url=${query}`);
+async function downloadMp4(url) {
+    const res = await fetch(`${window.location.href}getvideo?url=${url}`);
     if (res.status == 200) {
         var a = document.createElement('a');
-        a.href = `${serverURL}/downloadmp4?url=${query}`;
+        a.href = `${window.location.href}getvideo?url=${url}`;
         a.setAttribute('download', '');
         a.click();
     } else if (res.status == 400) {

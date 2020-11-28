@@ -6,12 +6,7 @@ const PORT = 4000;
 
 app.use(cors());
 
-app.use(express.static("public"));
-
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-    response.sendFile(__dirname + "/client/index.html");
-});
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/downloadmp3', async (req, res, next) => {
     try {
